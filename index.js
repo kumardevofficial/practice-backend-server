@@ -1,6 +1,7 @@
 import express from "express"
 import dbConnect from "./database.js"
-import {Post} from "./postSchema.js"
+import {Post} from "./Model/postSchema.js"
+import {router as creatPost} from "./Routes/createPost.router.js"
 // const PORT = 3000;
 const app = express();
 
@@ -12,6 +13,7 @@ app.get("/", (req, res) => {
   res.send(" hello this is me");
 })
 
+app.use("/creatPost",creatPost);
 const createPost = async (req, res) => {
   const postData = req.body;
   const post = new Post(postData);

@@ -1,5 +1,5 @@
 import express from "express"
-import mongoose from "mongoose";
+import dbConnect from "./database.js"
 import {Post} from "./postSchema.js"
 // const PORT = 3000;
 const app = express();
@@ -24,18 +24,6 @@ const createPost = async (req, res) => {
 }
 
 app.post("/mypost", createPost)
-
-
-const URL = "mongodb+srv://devkumark:thisisme@cluster0.ie8o5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-
-const dbConnect = async (req, res) => {
-  try{
-    await mongoose.connect(URL);
-    console.log(" Db connected successfully");
-  } catch (err){
-    console.log("unable to connect Db", err);
-  }
-}
 
 dbConnect();
 

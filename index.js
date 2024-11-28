@@ -1,7 +1,7 @@
 import express from "express"
 import mongoose from "mongoose";
 import {Post} from "./postSchema.js"
-const PORT = 3000;
+// const PORT = 3000;
 const app = express();
 
 app.use(express.json());
@@ -39,6 +39,10 @@ const dbConnect = async (req, res) => {
 
 dbConnect();
 
-app.listen(PORT, ()=> {
-  console.log(" the server is started");
-})
+export default (req, res) => {
+  app(req, res);  
+};
+
+// app.listen(PORT, ()=> {
+//   console.log(" the server is started");
+// })

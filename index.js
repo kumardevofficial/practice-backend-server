@@ -9,7 +9,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://myblog-eight-mauve.vercel.app", // Allow specific origin
+    origin: "*", // Allow specific origin
     methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
     credentials: true, // Allow cookies or authentication headers

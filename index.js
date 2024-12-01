@@ -24,14 +24,14 @@ app.get("/", (req, res) => {
   res.send(" hello this is me");
 })
 
-app.use("/creatPost",creatPost);
+app.use("/create-post",creatPost);
 
 dbConnect();
 
-export default (req, res) => {
-  app(req, res);  
-};
+// export default (req, res) => {
+//   app(req, res);  
+// };
 
-// app.listen(PORT, ()=> {
-//   console.log(" the server is started");
-// })
+app.listen(3000, ()=> {
+  console.log(" the server is started");
+})

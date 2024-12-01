@@ -1,7 +1,19 @@
+// import { Router } from "express";
+// import {createPost} from "../Controller/controler.createPost.js"
+
+// const router = Router();
+// router.post("/create", createPost);
+
+// export {router};
+
+
+
 import { Router } from "express";
-import {createPost} from "../Controller/controler.createPost.js"
+import { createPost } from "../Controller/controler.createPost.js";
 
 const router = Router();
-router.get("/", createPost);
 
-export {router};
+// POST request for creating a post
+router.post("/create", createPost);
+
+export { router };

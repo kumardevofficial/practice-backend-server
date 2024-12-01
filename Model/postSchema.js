@@ -1,13 +1,17 @@
 import mongoose, { mongo, Schema } from "mongoose";
 
 const postSchema = new mongoose.Schema({
-  postHeading : {
+  title : {
     type : String,
-    required : true
+    require : true
   },
-  postDiscription : {
+  discription : {
     type : String,
-    required : true
+    require : true,
+  },
+  category : {
+    type : String,
+    require : true
   }
 })
 

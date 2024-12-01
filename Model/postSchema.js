@@ -1,18 +1,19 @@
-import mongoose, { mongo, Schema } from "mongoose";
+import mongoose from "mongoose";
 
 const postSchema = new mongoose.Schema({
-  title : {
-    type : String,
-    require : true
+  title: {
+    type: String,
+    required: true,
   },
-  discription : {
-    type : String,
-    require : true,
+  description: {
+    type: String,
+    required: true,
   },
-  category : {
-    type : String,
-    require : true
-  }
-})
+  category: {
+    type: String,
+    required: true,
+  },
+});
 
 export const Post = mongoose.model("Post", postSchema);
+

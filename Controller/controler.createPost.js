@@ -20,4 +20,31 @@ const getAllArticles = async (req, res) => {
   }
 };
 
-export {createPost, getAllArticles};
+const getAllPolitics =  async (req, res) => {
+try{
+  const allPolitics = await Post.find({category : "politics"});
+  res.json(allPolitics);
+}  catch (err) {
+  res.status(500).json({"message": "internal server error", "err": err});
+}
+}
+
+const getAllTechnology = async (req, res) => {
+try{
+  const allTechnology = await Post.find({category : "technology"})
+  res.json(allTechnology);
+} catch(err){
+res.status(500).json({"message" : "internal server error", "err": err});
+}
+}
+
+const getAllGeneral = async (req, res) => {
+  try{
+    const allGeneral  = await Post.find({category : "general"});
+    res.json(allGeneral);
+  } catch (err){
+    res.status(500).json({"message":"internal server error", "err": err});
+  }
+}
+
+export {createPost, getAllArticles, getAllPolitics, getAllTechnology, getAllGeneral};

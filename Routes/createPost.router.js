@@ -9,7 +9,8 @@
 
 
 import { Router } from "express";
-import { createPost } from "../Controller/controler.createPost.js";
+import { createPost, getAllArticles  } from "../Controller/controler.createPost.js";
+
 
 const router = Router();
 

@@ -15,5 +15,6 @@ const router = Router();
 
 // POST request for creating a post
 router.post("/create", createPost);
+router.get("/articles", getAllArticles);
 
 export { router };

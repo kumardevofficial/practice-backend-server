@@ -11,4 +11,13 @@ const createPost = async (req, res) => {
   }
 }
 
-export {createPost};
+const getAllArticles = async (req, res) => {
+  try {
+    const allPosts = await Post.find(); // Removed the filter condition to fetch all posts
+    res.json(allPosts); // Respond with all posts
+  } catch (err) {
+    res.status(500).json({ "message": "Internal server error", "err": err }); // Improved error response message for consistency
+  }
+};
+
+export {createPost, getAllArticles};
